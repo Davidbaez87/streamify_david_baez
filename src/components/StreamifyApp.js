@@ -10,12 +10,15 @@ const StreamifyApp=()=>{
     const [error, setError]=useState(false)
     const [movies, setMovies]=useState([])
 
+    const API_KEY=process.env.REACT_IMDB_API_KEY;
+    
+
     const fetchMovies = async(searchTerm)=>{
         setLoading(true);
         setError(null);
 
         try {
-            const response =await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=508387f9&s=${searchTerm}`);
+            const response =await axios.get(`https://www.omdbapi.com/?apikey=508387f9&s=${searchTerm}`);
             if(response.data.Response === "True"){
                 // console.log(response.data)
                 setMovies(response.data.Search);
