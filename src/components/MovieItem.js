@@ -13,7 +13,7 @@ import Col from 'react-bootstrap/Col';
               <Card.Body>
                 <Card.Title>{movie.Title}</Card.Title>
                 <Card.Text> Release Date: {movie.Year}</Card.Text>
-                <Card.Text> Movie/Series: {movie.Type}</Card.Text>
+                <Card.Text> Movie or Series: {movie.Type}</Card.Text>
               </Card.Body>
               </Card>
               </Col>
