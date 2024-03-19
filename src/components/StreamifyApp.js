@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import SearchBar from './SearchBar';
+import Movie_list from './Movie_list';
 
 
 const StreamifyApp=()=>{
@@ -14,10 +15,10 @@ const StreamifyApp=()=>{
         setError(null);
 
         try {
-            const response =await axios.get('https://www.yourmovies.api.com/?apikey=apikey&s=${searchTerm}');
-            if(response.data.response === "True"){
-                console.log(response.data)
-                setMovies(response.data)
+            const response =await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=508387f9&s=${searchTerm}`);
+            if(response.data.Response === "True"){
+                // console.log(response.data)
+                setMovies(response.data.Search);
             }else {
                 setError(response.data.Error);
             }
@@ -33,9 +34,11 @@ const StreamifyApp=()=>{
     <div>
 
         <h1>Streamify</h1>
-        <SearchBar/>
+        <SearchBar onSearch={fetchMovies }/>
+        {loading && <p>Loading.....</p>}
+        {error && <p>{error}</p>}
 
-
+        <Movie_list movies={movies}/>
     </div>);
 }
 export default StreamifyApp;
