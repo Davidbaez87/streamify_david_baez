@@ -1,4 +1,4 @@
-import Movie_Item from "./Movie_item"
+import Movie_Item from "./MovieItem"
 
 
         const Movie_list=({movies})=>{
