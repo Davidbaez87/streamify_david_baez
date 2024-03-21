@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import SearchBar from './SearchBar';
-import Movie_list from './Movie_list';
+import Movie_list from './MovieList';
 
 
 const StreamifyApp=()=>{
