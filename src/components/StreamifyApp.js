@@ -36,7 +36,7 @@ const StreamifyApp=()=>{
     return(
     <div>
 
-        <h1>Streamify</h1>
+        <h1>STREAMIFY</h1>
         <SearchBar onSearch={fetchMovies }/>
         {loading && <p>Loading.....</p>}
         {error && <p>{error}</p>}
