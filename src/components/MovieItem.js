@@ -3,8 +3,9 @@ import Container from 'react-bootstrap/Container';
 
     const Movie_Item=({movie})=>{
         return(
+          <div className="space">
           <Container fluid>
-              <Card style={{ width: '25rem' }}>
+              <Card style={{ width: '18rem' }}>
               <Card.Img variant="top" src={movie.Poster} />
               <Card.Body>
                 <Card.Title>{movie.Title}</Card.Title>
@@ -13,7 +14,9 @@ import Container from 'react-bootstrap/Container';
               </Card.Body>
               </Card>
           </Container>
+          </div>
         )
+        
     }
 
     export default Movie_Item;

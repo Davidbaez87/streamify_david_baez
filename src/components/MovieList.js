@@ -5,19 +5,17 @@ import Col from 'react-bootstrap/Col';
         const Movie_list=({movies})=>{
 
             return(
-            <div style={{display: 'centre'}}>
-                <h2>Movie App</h2>
-                <Row xs={1} md={2} lg={3} className="movie-L">
-                <ul>
+            <div style={{display: 'block'}}>
+                <Row xs={1} md={2} lg={3} className="g-4">         
                 {
                     movies.map((movie)=> (
                         <Col key={movie.imdbID}>
-                        <Movie_Item key={movie.imdbID} movie={movie}/>
+                        <Movie_Item key={movie.imdbID} movie={movie} class="movie-L"/>
                         </Col>
                         )
                         )}
-                </ul>
                 </Row>
+                
             </div>
             )
         }
